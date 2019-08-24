@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+$primary: #00d5ff;
+$secondary: #f53b8c;
+$terciary: #1b2c39;
+$custom-colors: (
+     "secondary": $secondary,
+     "terciary": $terciary
+);
+$navbar-item-color: $primary;
+$navbar-item-img-max-height: 3.5rem;
+$family-primary: "Montserrat";
+$navbar-background-color: $terciary;
+$navbar-item-hover-color: white;
+
+@import "../../node_modules/bulma/bulma.sass";

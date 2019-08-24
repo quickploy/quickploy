@@ -1,0 +1,19 @@
+.line1 {
+     transform: rotate(-45deg) translate(-4px, 5px);
+}
+.line2 {
+     opacity: 0;
+}
+.line3 {
+     transform: rotate(45deg) translate(-4px, -5px);
+}
+
+.vertical-bar {
+     border-right: 1px solid white;
+}
+
+@media screen and (max-width: 1023px) {
+     .vertical-bar {
+          border: none;
+     }
+}

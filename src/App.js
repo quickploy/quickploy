@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GlobalStyle from "./styles/global";
+import { connect } from "react-redux";
+import Header from "./components/Header";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+     return (
+          <React.Fragment>
+               <GlobalStyle />
+               <BrowserRouter>
+                    <Header />
+                    <Route path="/" exact component={Home} />
+               </BrowserRouter>
+          </React.Fragment>
+     );
 }
 
-export default App;
+const mapStateToProps = state => {
+     return {
+          name: state.user.name
+     };
+};
+
+export default connect(mapStateToProps)(App);

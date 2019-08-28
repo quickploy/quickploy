@@ -24,7 +24,8 @@ export default function Header() {
      };
      useEffect(() => {
           window.addEventListener("scroll", handleScroll);
-     });
+          window.onload = handleScroll();
+     }, []);
 
      return (
           <Container navcolor={navcolor}>
@@ -37,9 +38,7 @@ export default function Header() {
                     <ul>
                          <Timer index={0} open={open}>
                               <li>
-                                   <Link to="/areas-de-atuacao">
-                                        para parceiros
-                                   </Link>
+                                   <Link to="/parceiros">para parceiros</Link>
                               </li>
                          </Timer>
                          <Timer index={1} open={open}>

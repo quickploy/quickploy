@@ -1,9 +1,13 @@
 import React from "react";
 import GlobalStyle from "./styles/global";
 import { connect } from "react-redux";
-import Header from "./components/Header";
 import { BrowserRouter, Route } from "react-router-dom";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
+import Parceiros from "./pages/Parceiros";
 
 function App(props) {
      return (
@@ -12,6 +16,8 @@ function App(props) {
                <BrowserRouter>
                     <Header />
                     <Route path="/" exact component={Home} />
+                    <Route path="/parceiros" component={Parceiros} />
+                    <Footer />
                </BrowserRouter>
           </React.Fragment>
      );

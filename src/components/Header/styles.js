@@ -23,6 +23,7 @@ background-color: ${props =>
      position: fixed;
      text-transform: capitalize;
      width: 100%;
+     z-index: 10;
      a {
           display: block;
           text-decoration: none;
@@ -32,7 +33,7 @@ background-color: ${props =>
           display: block;
           width: 190px;
      }
-     @media screen and (max-width: 1023px) {
+     @media screen and (max-width: 1100px) {
           height: 80px;
           padding: 0 20px;
           justify-content: space-between;
@@ -41,7 +42,7 @@ background-color: ${props =>
 
 export const MenuEnd = styled.div`
      margin-left: 70px;
-     width: 100%;
+     width: 100vw;
      a {
           -webkit-transition: color 0.5s;
           align-items: center;
@@ -66,13 +67,13 @@ export const MenuEnd = styled.div`
           justify-content: flex-end;
           list-style-type: none;
      }
-     @media screen and (max-width: 1023px) {
+     @media screen and (max-width: 1100px) {
           background-color: rgba(0, 213, 255, 0.97);
           height: 100vh;
           margin-left: 20px;
           position: absolute;
           right: 0;
-          top: ${props => (props.open ? "0" : "80")};
+          top: 0;
           width: 100%;
           transform: ${props =>
                props.open ? "translateX(0 %)" : "translateX(100%)"};
@@ -80,7 +81,7 @@ export const MenuEnd = styled.div`
           overflow-x: hidden;
           a {
                color: ${colors.terciary};
-               font-size: 27px;
+               font-size: 20px;
                font-weight: 800;
                padding: 10px 20px;
           }
@@ -107,7 +108,7 @@ export const Burger = styled.div`
      position: relative;
      display: none;
      z-index: 1000;
-     @media screen and (max-width: 1023px) {
+     @media screen and (max-width: 1100px) {
           display: block;
      }
 `;
@@ -132,7 +133,7 @@ export const Timer = styled.div`
           }
      }
      li {
-          @media screen and (max-width: 1023px) {
+          @media screen and (max-width: 1100px) {
                animation: ${props =>
                     props.open
                          ? `navLinkFade ${props.index / 4 +
@@ -167,7 +168,7 @@ export const Button = styled.button`
      margin-right: 15px;
      text-align: center;
      text-decoration: none;
-     @media screen and (max-width: 1023px) {
+     @media screen and (max-width: 1100px) {
           border-radius: 50px;
           /* background-color: transparent; */
           /* border: 1px solid ${colors.primary}; */
@@ -175,7 +176,7 @@ export const Button = styled.button`
           margin-top: 20px;
           margin-left: 30px;
           a {
-               font-size: 20px;
+               font-size: 15px;
           }
      }
 `;
@@ -187,7 +188,7 @@ export const SeparadorMobile = styled.div`
      width: 35px;
      height: 3.5px;
      background-color: white;
-     @media screen and (max-width: 1023px) {
+     @media screen and (max-width: 1100px) {
           display: ${props => (props.open ? "block" : "")};
           margin-left: 35px;
           margin-top: 30px;

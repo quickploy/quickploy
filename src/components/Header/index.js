@@ -24,46 +24,78 @@ export default function Header() {
      };
      useEffect(() => {
           window.addEventListener("scroll", handleScroll);
-     });
+          window.onload = handleScroll();
+     }, []);
 
      return (
           <Container navcolor={navcolor}>
                <div className="menu-start">
-                    <a href="http://localhost:3000">
+                    <Link to="/">
                          <img src={logo} alt="Quickploy" />
-                    </a>
+                    </Link>
                </div>
                <MenuEnd open={open}>
                     <ul>
                          <Timer index={0} open={open}>
                               <li>
-                                   <Link to="/areas-de-atuacao">
+                                   <Link
+                                        to="/parceiros"
+                                        onClick={() => {
+                                             setOpen(false);
+                                        }}
+                                   >
                                         para parceiros
                                    </Link>
                               </li>
                          </Timer>
                          <Timer index={1} open={open}>
                               <li>
-                                   <Link to="/areas-de-atuacao">
+                                   <Link
+                                        to="/areas-de-atuacao"
+                                        onClick={() => {
+                                             setOpen(false);
+                                        }}
+                                   >
                                         áreas de atuação
                                    </Link>
                               </li>
                          </Timer>
                          <Timer index={2} open={open}>
                               <li>
-                                   <Link to="/servicos">serviços</Link>
+                                   <Link
+                                        to="/servicos"
+                                        onClick={() => {
+                                             setOpen(false);
+                                        }}
+                                   >
+                                        serviços
+                                   </Link>
                               </li>
                          </Timer>
                          <Timer index={3} open={open}>
                               <li className="vertical-bar">
-                                   <Link to="/ajuda">contato</Link>
+                                   <Link
+                                        to="/contato"
+                                        onClick={() => {
+                                             setOpen(false);
+                                        }}
+                                   >
+                                        contato
+                                   </Link>
                               </li>
                          </Timer>
                          <SeparadorMobile open={open} />
                          <Timer index={4} open={open}>
                               <li>
                                    <Button>
-                                        <Link to="/book">quero me mudar</Link>
+                                        <Link
+                                             to="/book"
+                                             onClick={() => {
+                                                  setOpen(false);
+                                             }}
+                                        >
+                                             quero me mudar
+                                        </Link>
                                    </Button>
                               </li>
                          </Timer>
